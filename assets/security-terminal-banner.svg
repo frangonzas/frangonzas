@@ -1,0 +1,37 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Fran Gonzas — Security-Oriented Software Engineering</title>
+  <desc id="desc">Dark terminal-style banner with green and amber accents.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050807"/>
+      <stop offset="55%" stop-color="#090d0b"/>
+      <stop offset="100%" stop-color="#11100a"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#183225" stroke-width="1" opacity="0.38"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" rx="22" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="22" fill="url(#grid)"/>
+
+  <circle cx="44" cy="38" r="6" fill="#ff5f56"/>
+  <circle cx="66" cy="38" r="6" fill="#ffbd2e"/>
+  <circle cx="88" cy="38" r="6" fill="#27c93f"/>
+  <text x="112" y="43" fill="#66756c" font-size="15" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">secure-shell — frangonzas</text>
+
+  <text x="64" y="118" fill="#32e875" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" filter="url(#glow)">fg@secure-node:~$ whoami</text>
+  <text x="64" y="188" fill="#f2f7f3" font-size="54" font-weight="700" letter-spacing="2" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">FRAN GONZAS</text>
+  <text x="66" y="231" fill="#d7aa3f" font-size="21" letter-spacing="3" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">SOFTWARE · SYSTEMS · SECURITY</text>
+
+  <text x="66" y="288" fill="#91a399" font-size="17" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">build responsibly  //  test with authorization  //  protect by design</text>
+
+  <rect x="64" y="313" width="284" height="2" fill="#32e875" opacity="0.7"/>
+  <rect x="356" y="313" width="88" height="2" fill="#d7aa3f" opacity="0.75"/>
+
+  <text x="935" y="322" fill="#32e875" opacity="0.8" font-size="14" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">STATUS: ONLINE</text>
+</svg>
