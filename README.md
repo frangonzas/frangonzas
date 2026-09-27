@@ -50,10 +50,10 @@ My work combines product engineering with hands-on experimentation across Apple 
 
 | Lab | Focus | Status |
 |---|---|---|
-| **[OnyxKode Security Lab](./labs/onyxkode-security-lab/README.md)** | Secure identity · encrypted communication · resilience | `ACTIVE` |
-| **[Swift Crypto Lab](./labs/swift-crypto-lab/README.md)** | CryptoKit · key lifecycle · secure composition | `ACTIVE` |
-| **[P2P Research](./labs/p2p-research/README.md)** | Discovery · authorization · transport failure | `ACTIVE` |
-| **[iOS Security Toolkit](./labs/ios-security-toolkit/README.md)** | Defensive review · release gates · privacy | `ACTIVE` |
+| **[OnyxKode Security Lab](https://github.com/frangonzas/OnyxKode-Security-Lab)** | Secure identity · encrypted communication · resilience | `ACTIVE` |
+| **[Swift Crypto Lab](https://github.com/frangonzas/Swift-Crypto-Lab)** | CryptoKit · key lifecycle · secure composition | `ACTIVE` |
+| **[P2P Research](https://github.com/frangonzas/P2P-Research)** | Discovery · authorization · transport failure | `ACTIVE` |
+| **[iOS Security Toolkit](https://github.com/frangonzas/iOS-Security-Toolkit)** | Defensive review · release gates · privacy | `ACTIVE` |
 
 Supporting engineering references:
 
@@ -74,7 +74,7 @@ research status
 
 ## `> selected_projects`
 
-### `ONYXKODE`
+### [`ONYXKODE`](https://github.com/frangonzas/OnyxKode-Security-Lab)
 **Secure communications research project**
 
 Private messaging, cryptographic identity, P2P communication, QR-based encrypted exchange, emergency communication concepts and secure synchronization.
