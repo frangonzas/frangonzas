@@ -75,11 +75,11 @@ research status
 ## `> selected_projects`
 
 ### [`ONYX FLIPPER LAB`](https://github.com/frangonzas/Onyx-Flipper-Lab)
-**Defensive hardware-security utilities for Flipper Zero**
+**Finalized field-audit terminal for Flipper Zero**
 
-External FAP written in C, built with the official uFBT toolchain. Hardware RNG utilities, security guidance and a deliberately passive v1 architecture.
+Final v3.0.0 external FAP written in C and built with the official uFBT toolchain. GPIO auditing, Sub-GHz RX metrics and baseline analysis, Bluetooth posture checks, IR/NFC/LF-RFID inspection, hardware RNG utilities and privacy-safe field reports.
 
-`C` `Flipper Zero` `Furi` `uFBT` `Hardware RNG`
+`FINAL` `TESTED` `C` `Flipper Zero` `Furi` `uFBT`
 
 
 ### [`ONYXKODE`](https://github.com/frangonzas/OnyxKode-Security-Lab)
