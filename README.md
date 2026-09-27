@@ -46,6 +46,32 @@ My work combines product engineering with hands-on experimentation across Apple 
 
 ---
 
+## `> security_research_portfolio`
+
+| Lab | Focus | Status |
+|---|---|---|
+| **[OnyxKode Security Lab](./labs/onyxkode-security-lab/README.md)** | Secure identity · encrypted communication · resilience | `ACTIVE` |
+| **[Swift Crypto Lab](./labs/swift-crypto-lab/README.md)** | CryptoKit · key lifecycle · secure composition | `ACTIVE` |
+| **[P2P Research](./labs/p2p-research/README.md)** | Discovery · authorization · transport failure | `ACTIVE` |
+| **[iOS Security Toolkit](./labs/ios-security-toolkit/README.md)** | Defensive review · release gates · privacy | `ACTIVE` |
+
+Supporting engineering references:
+
+- **[Threat Model](./docs/THREAT-MODEL.md)** — assets, trust boundaries, threats and review triggers.
+- **[Security Engineering Checklist](./docs/SECURITY-CHECKLIST.md)** — repository, auth, crypto, storage, networking, privacy and release controls.
+- **[Responsible Disclosure](./SECURITY.md)** — security reporting boundaries and safe-harbor intent.
+- **[Contributing](./CONTRIBUTING.md)** — precision, reproducibility and responsible collaboration.
+
+```text
+research status
+├── secure-comms ........ ONLINE
+├── crypto-design ....... ONLINE
+├── p2p-resilience ...... ONLINE
+└── ios-hardening ....... ONLINE
+```
+
+---
+
 ## `> selected_projects`
 
 ### `ONYXKODE`
