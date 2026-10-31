@@ -1,80 +1,71 @@
-# Threat Model
+# Modelo de amenazas
 
-## 1. Assets
+## 1. Activos
 
-Primary assets considered across the security labs:
+Activos contemplados en los laboratorios: identidad de usuario, claves criptográficas, mensajes y datos privados, relaciones de autorización, estado local, tokens de sincronización e integridad de la aplicación.
 
-- user identity;
-- cryptographic key material;
-- private messages and application data;
-- authorization relationships;
-- locally persisted state;
-- server or synchronization tokens;
-- integrity of application behavior.
+## 2. Límites de confianza
 
-## 2. Trust boundaries
-
-```mermaid
+~~~mermaid
 flowchart LR
-    U[User] --> A[iOS Application]
-    A --> K[Protected Local Storage]
-    A --> P[P2P Transport]
-    A --> C[Cloud / API Boundary]
-    P --> X[External Peer]
-    C --> S[Remote Service]
-```
+    U[Usuario] --> A[Aplicación iOS]
+    A --> K[Almacenamiento local protegido]
+    A --> P[Transporte P2P]
+    A --> C[API o nube]
+    P --> X[Dispositivo externo]
+    C --> S[Servicio remoto]
+~~~
 
-Each boundary is treated as a point where input, identity and authorization must be reconsidered.
+Cada límite exige **validar nuevamente los datos, la identidad y la autorización**.
 
-## 3. Threat categories
+## 3. Amenazas y medidas
 
-### Spoofing
-An untrusted endpoint attempts to impersonate an authorized identity.
+### Suplantación de identidad
 
-**Controls:** explicit identity verification, authenticated sessions and protected key material.
+Un extremo no confiable intenta hacerse pasar por una identidad autorizada.
 
-### Tampering
-Data is modified in transit or storage.
+**Controles:** validación de identidad, sesiones autenticadas y protección de claves.
 
-**Controls:** authenticated encryption, signatures where appropriate, validation and integrity checks.
+### Manipulación de datos
 
-### Information disclosure
-Sensitive information becomes visible through storage, logs, transport or metadata.
+Se altera información almacenada o transmitida.
 
-**Controls:** minimization, encryption, secure storage and redacted logging.
+**Controles:** cifrado autenticado, firmas cuando proceda, validación y verificaciones de integridad.
 
-### Replay
-Previously valid data is submitted again in an unintended context.
+### Divulgación de información
 
-**Controls:** freshness, protocol state, unique nonces where required and bounded session semantics.
+Los datos sensibles se exponen en almacenamiento, registros, transporte o metadatos.
 
-### Denial of service
-Malformed or excessive input degrades the application.
+**Controles:** minimización, cifrado, almacenamiento seguro y registros depurados.
 
-**Controls:** bounded parsing, rate controls where applicable, cancellation and resource limits.
+### Reutilización de mensajes (replay)
 
-### Privilege abuse
-A component or user receives capabilities beyond what is necessary.
+Un mensaje previamente válido se presenta fuera de su contexto previsto.
 
-**Controls:** least privilege, explicit authorization and narrow interfaces.
+**Controles:** vigencia temporal, estado de protocolo, \`nonce\` únicos cuando correspondan y sesiones acotadas.
 
-## 4. Security assumptions
+### Denegación de servicio
 
-- The operating system and platform cryptographic implementation are trusted within their documented guarantees.
-- A fully compromised or unlocked endpoint can invalidate many application-level protections.
-- Network peers are untrusted until authenticated and authorized.
-- Remote responses are data, not instructions.
-- Security properties must remain understandable during failure.
+Entradas excesivas o malformadas degradan la aplicación.
 
-## 5. Review triggers
+**Controles:** análisis de tamaños limitados, control de ritmo, cancelación y límites de recursos.
 
-Update the threat model whenever a project adds:
+### Abuso de privilegios
 
-- a new network boundary;
-- authentication;
-- cloud synchronization;
-- new sensitive data;
-- user-generated content;
-- background processing;
-- external integrations;
-- a new cryptographic protocol.
+Un componente o usuario obtiene más capacidades de las necesarias.
+
+**Controles:** mínimo privilegio, autorización explícita e interfaces específicas.
+
+## 4. Suposiciones
+
+- Se confía en el sistema operativo y la criptografía de plataforma dentro de sus garantías documentadas.
+- Un dispositivo desbloqueado y comprometido puede invalidar muchas medidas de aplicación.
+- Los extremos remotos no se consideran confiables sin autenticación y autorización.
+- Las respuestas de servicios remotos son datos, no instrucciones.
+- Las propiedades de seguridad deben seguir siendo comprensibles durante un fallo.
+
+## 5. Cuándo revisar este documento
+
+Actualízalo cuando se incorporen nuevas conexiones de red, autenticación, sincronización en nube, datos sensibles, contenidos de usuarios, tareas en segundo plano, integraciones externas o nuevos protocolos criptográficos.
+
+© 2026 Fran Gonzas

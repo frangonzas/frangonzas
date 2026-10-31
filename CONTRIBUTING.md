@@ -1,40 +1,30 @@
-# Contributing
+# Contribuir
 
-Thanks for your interest.
+Gracias por tu interés en estos proyectos.
 
-This profile repository is primarily a public engineering portfolio and security research notebook.
+Este repositorio funciona principalmente como **portfolio público de ingeniería** y cuaderno de investigación defensiva.
 
-## Contributions
+## Contribuciones útiles
 
-Useful contributions include:
+- Correcciones de documentación técnica.
+- Explicaciones más claras de controles defensivos.
+- Casos de prueba reproducibles de fiabilidad.
+- Mejoras en diagramas y terminología.
+- Referencias a documentación oficial de las plataformas.
 
-- corrections to technical documentation;
-- clearer defensive security guidance;
-- reproducible reliability test cases;
-- improvements to diagrams or terminology;
-- references to relevant platform documentation.
+## Información de seguridad
 
-## Security issues
+No publiques detalles de explotación ni datos sensibles en una incidencia ordinaria. Consulta primero [SECURITY.md](SECURITY.md) y utiliza la comunicación privada de vulnerabilidades cuando esté disponible.
 
-Do not publish sensitive exploit details in a normal issue.
+## Principios de colaboración
 
-Read [SECURITY.md](./SECURITY.md) first and use private vulnerability reporting when available.
+- Precisión técnica y reproducibilidad.
+- Comunicación constructiva, sin afirmaciones exageradas.
+- Respeto a los límites de autorización.
+- Protección de información personal y secreta.
 
-## Principles
+## Solicitudes de cambio
 
-```text
-be precise
-be reproducible
-be constructive
-avoid hype
-respect authorization
-protect sensitive information
-```
+Mantén cada solicitud de cambio acotada y explica qué modifica, por qué mejora el proyecto y cómo se ha validado.
 
-## Pull requests
-
-Keep pull requests small and explain:
-
-1. what changes;
-2. why it improves the material;
-3. how the change was validated.
+**Responsable: Fran Gonzas.**

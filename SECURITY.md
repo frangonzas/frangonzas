@@ -1,67 +1,44 @@
-# Security Policy
+# Política de seguridad
 
-## Responsible disclosure
+## Divulgación responsable
 
-Security reports are welcome when they concern software, code or infrastructure published by **Fran Gonzas**.
+Se aceptan comunicaciones sobre debilidades de seguridad que afecten al software, código o infraestructura **publicados por Fran Gonzas**.
 
-Please act in good faith and avoid any activity that could harm users, data, devices, services or third parties.
+Actúa siempre de buena fe y evita actividades que puedan perjudicar a personas, datos, dispositivos, servicios o terceros.
 
-## Scope
+## Alcance
 
-A report is generally in scope when it concerns a reproducible security weakness in a public project maintained by this account.
+Se consideran relevantes las vulnerabilidades reproducibles en proyectos públicos mantenidos por esta cuenta; por ejemplo:
 
-Examples include:
+- Fallos de autenticación o autorización.
+- Exposición involuntaria de información sensible.
+- Uso criptográfico inseguro.
+- Inyección de datos o comandos.
+- Escalada de privilegios.
+- Errores de configuración con impacto de seguridad.
+- Debilidades que afecten a confidencialidad, integridad o disponibilidad.
 
-- authentication or authorization flaws;
-- unintended disclosure of sensitive data;
-- insecure cryptographic implementation;
-- injection vulnerabilities;
-- privilege escalation;
-- security-relevant configuration errors;
-- vulnerabilities that could materially affect confidentiality, integrity or availability.
+## Actividades no autorizadas
 
-## Out of scope
+Esta política **no permite**:
 
-The following are not authorized by this policy:
+- Probar sistemas, cuentas o infraestructuras ajenas sin autorización.
+- Ingeniería social, phishing ni ataques físicos.
+- Denegación de servicio o agotamiento deliberado de recursos.
+- Escaneos automatizados que perturben los servicios.
+- Acceder, alterar, borrar o extraer datos reales de otras personas.
+- Publicar instrucciones de explotación antes de una corrección razonable.
 
-- testing against systems, accounts or infrastructure you do not own or lack permission to test;
-- social engineering, phishing or physical attacks;
-- denial-of-service or resource-exhaustion testing;
-- automated scanning that generates disruptive traffic;
-- accessing, modifying, deleting or exfiltrating real user data;
-- publishing exploit details before a reasonable remediation process can occur.
+## Cómo comunicar un problema
 
-## Reporting
+Incluye el proyecto y versión o commit afectado, descripción concisa, pasos reproducibles con datos de prueba no destructivos, impacto previsto y posible mitigación.
 
-When reporting an issue, include:
+**No publiques** contraseñas, tokens, claves privadas o datos personales. Si el repositorio admite informes privados de vulnerabilidades en GitHub, utiliza ese canal; en caso contrario, el método de contacto menos público ofrecido por el proyecto.
 
-1. affected project and version or commit;
-2. concise description of the vulnerability;
-3. reproducible steps or proof of concept using non-destructive test data;
-4. expected security impact;
-5. suggested mitigation, if known.
+## Investigación de buena fe
 
-Do **not** include real credentials, tokens, private keys or personal data in a public issue.
+Se considera investigación responsable aquella que respeta estos límites, se realiza en sistemas autorizados y evita perjuicios. Esto **no otorga permiso** para realizar pruebas contra infraestructura de terceros.
 
-For repositories that support GitHub private vulnerability reporting, prefer that channel. Otherwise, use the least-public contact method made available by the affected project.
+**Primero la autorización. Después, las pruebas mínimas necesarias y la comunicación responsable.**
 
-## Safe-harbor intent
-
-Good-faith security research that stays within the boundaries above, uses only systems you are authorized to test and avoids harm is considered responsible research.
-
-This policy does not grant authorization to test third-party systems or infrastructure.
-
-## Principles
-
-```text
-authorization first
-minimum necessary testing
-no unnecessary data access
-no persistence
-no disruption
-responsible disclosure
-```
-
----
-
-**Security is a process, not a visual effect.**
+© 2026 Fran Gonzas

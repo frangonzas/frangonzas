@@ -1,63 +1,63 @@
-# Security Engineering Checklist
+# Lista de verificación de ingeniería de seguridad
 
-## Repository hygiene
+## Repositorio y dependencias
 
-- [ ] No passwords, API keys, tokens, certificates or private keys committed
-- [ ] .gitignore covers local build artifacts and secret files
-- [ ] Public documentation contains no private infrastructure details
-- [ ] Dependencies are intentional and reviewed
+- [ ] No se incluyen contraseñas, claves API, tokens, certificados ni claves privadas.
+- [ ] \`.gitignore\` excluye secretos y archivos de compilación locales.
+- [ ] La documentación pública no revela infraestructura privada.
+- [ ] Las dependencias son necesarias y han sido revisadas.
 
-## Authentication and authorization
+## Autenticación y autorización
 
-- [ ] Authentication and authorization are separate concepts
-- [ ] Privileged actions require explicit authorization
-- [ ] Session expiration and revocation are defined
-- [ ] Account / identity deletion behavior is documented
+- [ ] Se distinguen ambos conceptos.
+- [ ] Las acciones privilegiadas requieren autorización explícita.
+- [ ] La caducidad y revocación de sesiones están definidas.
+- [ ] Se documenta la eliminación de cuentas o identidades.
 
-## Cryptography
+## Criptografía
 
-- [ ] Platform or widely vetted primitives are used
-- [ ] No custom encryption algorithm
-- [ ] Key lifecycle is defined
-- [ ] Nonce / IV requirements are satisfied
-- [ ] Integrity / authenticity is verified
-- [ ] Sensitive values are never written to logs
+- [ ] Se utilizan primitivas reconocidas o proporcionadas por la plataforma.
+- [ ] No se inventan algoritmos propios de cifrado.
+- [ ] Se ha definido el ciclo de vida de las claves.
+- [ ] Se respetan los requisitos de \`nonce\` e IV.
+- [ ] Se comprueban integridad y autenticidad.
+- [ ] No se escriben valores sensibles en registros.
 
-## Storage
+## Almacenamiento
 
-- [ ] Sensitive data is minimized
-- [ ] Protection class / secure storage choice is intentional
-- [ ] Cached data has a retention policy
-- [ ] Destructive deletion is tested
+- [ ] Se minimizan los datos sensibles.
+- [ ] La clase de protección y el almacenamiento son adecuados.
+- [ ] Las cachés tienen una política de conservación.
+- [ ] Se prueba la eliminación destructiva.
 
-## Networking
+## Red y comunicaciones
 
-- [ ] TLS is used for internet-facing APIs
-- [ ] Responses are validated
-- [ ] Timeouts are explicit
-- [ ] Retries are bounded
-- [ ] Offline and degraded states are supported
-- [ ] P2P discovery does not automatically confer trust
+- [ ] Las API públicas utilizan TLS.
+- [ ] Se validan las respuestas externas.
+- [ ] Los tiempos de espera están definidos.
+- [ ] Se limita el número de reintentos.
+- [ ] Se gestionan los modos sin conexión y degradados.
+- [ ] El descubrimiento P2P no concede confianza automáticamente.
 
-## Input handling
+## Entradas de datos
 
-- [ ] External data is treated as untrusted
-- [ ] Decoding failures are handled safely
-- [ ] Size limits exist where needed
-- [ ] URLs / deep links are validated before use
+- [ ] Los datos externos se consideran no fiables.
+- [ ] Los errores de decodificación se gestionan de forma segura.
+- [ ] Existen límites de tamaño.
+- [ ] Las URL y enlaces profundos se validan antes de abrirlos.
 
-## Privacy
+## Privacidad
 
-- [ ] Collection is minimized
-- [ ] User-facing permissions match actual behavior
-- [ ] Analytics and third-party SDKs are documented
-- [ ] Privacy policy matches the shipped version
+- [ ] Se recopila solo lo necesario.
+- [ ] Los textos de permisos coinciden con el comportamiento.
+- [ ] Se documentan las analíticas y los SDK de terceros.
+- [ ] La política de privacidad corresponde a la versión publicada.
 
-## Release
+## Publicación
 
-- [ ] Threat model reviewed
-- [ ] Debug logging reviewed
-- [ ] Test credentials removed
-- [ ] Destructive actions tested on physical device
-- [ ] Security-sensitive error handling reviewed
-- [ ] Recovery behavior tested
+- [ ] Se ha revisado el modelo de amenazas.
+- [ ] Se han revisado los registros de depuración.
+- [ ] Se han retirado las credenciales de prueba.
+- [ ] Se han probado acciones destructivas en dispositivo físico.
+- [ ] Se ha revisado el tratamiento de errores sensibles.
+- [ ] Se ha probado la recuperación ante fallos.

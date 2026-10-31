@@ -1,179 +1,77 @@
 <p align="center">
-  <img src="./assets/security-terminal-banner.svg" alt="Fran Gonzas — Software, Systems & Security" width="100%" />
+  <img src="./assets/security-terminal-banner.svg" alt="Fran Gonzas — Software, Sistemas y Seguridad" width="100%" />
 </p>
 
 <p align="center">
-  <code>BUILD</code>&nbsp;&nbsp;·&nbsp;&nbsp;
-  <code>ANALYZE</code>&nbsp;&nbsp;·&nbsp;&nbsp;
-  <code>SECURE</code>&nbsp;&nbsp;·&nbsp;&nbsp;
-  <code>ITERATE</code>
+  <code>CONSTRUIR</code>&nbsp;·&nbsp;<code>ANALIZAR</code>&nbsp;·&nbsp;<code>PROTEGER</code>&nbsp;·&nbsp;<code>MEJORAR</code>
 </p>
 
----
+# Fran Gonzas · Ingeniería de software y seguridad
 
-## `> whoami`
+Desarrollo software con especial interés por la **seguridad, la privacidad, los sistemas distribuidos y las comunicaciones resistentes a fallos**. Combino ingeniería de producto con investigación práctica en el ecosistema Apple, redes P2P, identidad criptográfica y entornos Linux.
 
-```text
-Name       Fran Gonzas
-Role       Software developer · Security-oriented engineering
-Focus      Apple platforms · Secure communications · P2P · Applied cryptography
-Mode       Continuous learning / building / testing
-Policy     Authorized environments only
-```
+> La seguridad no es decoración: es arquitectura, verificación y gestión disciplinada de la confianza.
 
-I build software with a strong interest in **security, privacy, distributed systems and resilient communication**.
+## Perfil técnico
 
-My work combines product engineering with hands-on experimentation across Apple platforms, peer-to-peer networking, secure identity, encrypted data flows and Linux-based infrastructure.
-
-> **Security is not decoration. It is architecture, verification and disciplined trust.**
-
----
-
-## `> current_focus`
-
-```text
-[+] Swift / SwiftUI
-[+] iOS and Apple ecosystem
-[+] Secure communications
-[+] Peer-to-peer architectures
-[+] Applied cryptography
-[+] Privacy-first design
-[+] Network experimentation
-[+] Linux infrastructure
-[+] CloudKit and distributed synchronization
-[+] Security-oriented UX
-```
-
----
-
-## `> security_research_portfolio`
-
-| Lab | Focus | Status |
-|---|---|---|
-| **[OnyxKode Security Lab](https://github.com/frangonzas/OnyxKode-Security-Lab)** | Secure identity · encrypted communication · resilience | `ACTIVE` |
-| **[Swift Crypto Lab](https://github.com/frangonzas/Swift-Crypto-Lab)** | CryptoKit · key lifecycle · secure composition | `ACTIVE` |
-| **[P2P Research](https://github.com/frangonzas/P2P-Research)** | Discovery · authorization · transport failure | `ACTIVE` |
-| **[iOS Security Toolkit](https://github.com/frangonzas/iOS-Security-Toolkit)** | Defensive review · release gates · privacy | `ACTIVE` |
-
-Supporting engineering references:
-
-- **[Threat Model](./docs/THREAT-MODEL.md)** — assets, trust boundaries, threats and review triggers.
-- **[Security Engineering Checklist](./docs/SECURITY-CHECKLIST.md)** — repository, auth, crypto, storage, networking, privacy and release controls.
-- **[Responsible Disclosure](./SECURITY.md)** — security reporting boundaries and safe-harbor intent.
-- **[Contributing](./CONTRIBUTING.md)** — precision, reproducibility and responsible collaboration.
-
-```text
-research status
-├── secure-comms ........ ONLINE
-├── crypto-design ....... ONLINE
-├── p2p-resilience ...... ONLINE
-└── ios-hardening ....... ONLINE
-```
-
----
-
-## `> selected_projects`
-
-### [`ONYX FLIPPER LAB`](https://github.com/frangonzas/Onyx-Flipper-Lab)
-**Finalized field-audit terminal for Flipper Zero**
-
-Final v3.0.0 external FAP written in C and built with the official uFBT toolchain. GPIO auditing, Sub-GHz RX metrics and baseline analysis, Bluetooth posture checks, IR/NFC/LF-RFID inspection, hardware RNG utilities and privacy-safe field reports.
-
-`FINAL` `TESTED` `C` `Flipper Zero` `Furi` `uFBT`
-
-
-### [`ONYXKODE`](https://github.com/frangonzas/OnyxKode-Security-Lab)
-**Secure communications research project**
-
-Private messaging, cryptographic identity, P2P communication, QR-based encrypted exchange, emergency communication concepts and secure synchronization.
-
-`Swift` `SwiftUI` `CryptoKit` `P2P` `CloudKit`
-
-### `KOLECHAT`
-**Decentralized community communications**
-
-A community-oriented communications concept built around local discovery, shared events, alerts and privacy-conscious connectivity.
-
-`Swift` `SwiftUI` `MultipeerConnectivity` `CloudKit`
-
-### `MONTHIO`
-**Market analysis and investment research interface**
-
-Financial visualization, opportunity scanning, portfolio analysis and risk-oriented dashboards.
-
-`Swift` `SwiftUI` `Charts` `Data Analysis`
-
-### `SECURITY LAB`
-**Authorized defensive experimentation**
-
-```text
-security-lab/
-├── network-analysis/
-├── encrypted-communications/
-├── authentication/
-├── cryptographic-identity/
-├── linux-infrastructure/
-├── secure-apis/
-├── threat-modelling/
-└── defensive-research/
-```
-
----
-
-## `> stack`
-
-| Area | Technologies |
+| Área | Descripción |
 |---|---|
-| **Apple** | Swift · SwiftUI · Xcode · CryptoKit · CloudKit · MultipeerConnectivity · CoreLocation |
-| **Systems** | Linux · Kali Linux · Git · GitHub · Tailscale · Networking · REST APIs |
-| **Languages** | Swift · Python · Shell · HTML · CSS · JavaScript |
-| **Security interests** | Cryptography · Secure identity · P2P · Threat modelling · Privacy-by-design |
+| **Desarrollo** | Swift, SwiftUI, Python, Shell, HTML, CSS y JavaScript |
+| **Ecosistema Apple** | iOS, macOS, Xcode, CryptoKit, CloudKit y MultipeerConnectivity |
+| **Redes y sistemas** | Linux, Kali Linux, APIs REST, P2P y sincronización distribuida |
+| **Seguridad** | Identidad segura, cifrado, modelado de amenazas y privacidad por diseño |
+| **Metodología** | Aprendizaje continuo, prototipado, pruebas y documentación |
+
+## Investigación en seguridad
+
+| Laboratorio | Enfoque | Recursos |
+|---|---|---|
+| [OnyxKode Security Lab](https://github.com/frangonzas/OnyxKode-Security-Lab) | Validación, comunicaciones seguras y autorización | [Ficha técnica](labs/onyxkode-security-lab/README.md) |
+| [Swift Crypto Lab](https://github.com/frangonzas/Swift-Crypto-Lab) | CryptoKit, ciclo de vida de claves y cifrado autenticado | [Ficha técnica](labs/swift-crypto-lab/README.md) |
+| [P2P Research](https://github.com/frangonzas/P2P-Research) | Descubrimiento, confianza, autorización y fallos de transporte | [Ficha técnica](labs/p2p-research/README.md) |
+| [iOS Security Toolkit](https://github.com/frangonzas/iOS-Security-Toolkit) | Comprobaciones defensivas para aplicaciones Swift | [Ficha técnica](labs/ios-security-toolkit/README.md) |
+
+Recursos compartidos: [modelo de amenazas](docs/THREAT-MODEL.md), [lista de verificación de seguridad](docs/SECURITY-CHECKLIST.md), [política de divulgación responsable](SECURITY.md) y [colaboración](CONTRIBUTING.md).
+
+## Proyectos seleccionados
+
+### [Onyx Flipper Lab](https://github.com/frangonzas/Onyx-FlipperZero-Lab)
+
+Aplicación externa para **Flipper Zero** orientada a auditorías de campo autorizadas: GPIO, métricas Sub-GHz en recepción, inspección IR/NFC/LF RFID, utilidades de aleatoriedad y generación de informes con protección de datos. La documentación del proyecto identifica **v3.0.0** como versión final verificada.
+
+### [Onyx RF Lab para macOS](https://github.com/frangonzas/Onyx-RF-LAB.V3.0.1)
+
+Observatorio de radiofrecuencia con **HackRF One**, espectro en recepción, histórico de actividad, trazas RF e inventario Bluetooth del propio macOS. Separa expresamente la energía radioeléctrica de la identidad de los dispositivos.
+
+### [Onyx RF Lab para Windows](https://github.com/frangonzas/Onyx-RF-Lab-Windows)
+
+Edición nativa Windows con .NET/WPF, visualización de espectro, cascada (*waterfall*), mediciones relativas y observaciones BLE. Incluye instrucciones para obtener el ejecutable mediante GitHub Actions.
+
+### [Wardrive Track](https://github.com/frangonzas/Wardrive-Track)
+
+Análisis **Wi-Fi y Bluetooth/BLE** desde archivos PCAP/PCAPNG y registros GPS compatibles con ESP32 Marauder. Filtrado por seguridad WPA/WPA2/WPA3, cartografía de observaciones y exportación CSV/GeoJSON. Versión **0.3.0**.
+
+### Otros proyectos de investigación
+
+**OnyxKode** explora comunicaciones privadas, identidades criptográficas, intercambio cifrado y redes P2P. **KoleChat** investiga comunicaciones comunitarias y descubrimiento local. **Monthio** estudia visualización financiera, carteras y análisis de riesgo. Son áreas de trabajo y conceptos; no se presentan aquí como productos certificados ni disponibles comercialmente.
+
+## Principios de ingeniería
+
+- Comprender antes de automatizar.
+- Reducir la superficie de ataque.
+- Verificar la confianza y los límites de autorización.
+- Minimizar la información sensible.
+- Documentar el funcionamiento y los supuestos de seguridad.
+- Probar fallos y situaciones degradadas.
+- No incorporar claves ni secretos al repositorio.
+- Comunicar vulnerabilidades con responsabilidad.
+
+## Uso responsable
+
+Todos los proyectos de seguridad publicados aquí están destinados a **aprendizaje, investigación defensiva y entornos propios o expresamente autorizados**. Una observación RF no identifica automáticamente un dispositivo ni una persona.
+
+Si detectas una vulnerabilidad, revisa la [política de seguridad](SECURITY.md) antes de compartir detalles sensibles.
 
 ---
 
-## `> security_model`
-
-```text
-security != appearance
-security != obscurity
-
-security =
-    architecture
-  + verification
-  + least privilege
-  + controlled access
-  + encryption
-  + responsible testing
-```
-
-All security-related work shown here is intended for **authorized, defensive, educational or research environments**.
-
----
-
-## `> operating_principles`
-
-```bash
-01  understand_before_automating
-02  minimize_attack_surface
-03  trust_nothing_by_default
-04  protect_sensitive_data
-05  document_the_system
-06  test_failure_conditions
-07  never_commit_secrets
-08  disclose_responsibly
-09  keep_learning
-```
-
----
-
-## `> responsible_security`
-
-If you discover a security issue in one of my public projects, please follow the guidance in **[SECURITY.md](./SECURITY.md)** and avoid publishing exploit details before remediation can be assessed.
-
----
-
-<p align="center">
-  <strong>Fran Gonzas</strong><br/>
-  <code>Software · Systems · Security</code><br/><br/>
-  <sub>EOF // authorized access only</sub>
-</p>
+<p align="center"><strong>Fran Gonzas</strong><br/>Software · Sistemas · Seguridad<br/><sub>© 2026 · Investigación autorizada</sub></p>
