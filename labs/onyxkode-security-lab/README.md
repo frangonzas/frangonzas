@@ -1,70 +1,64 @@
-# OnyxKode Security Lab
+# OnyxKode Security Lab — Investigación defensiva
 
-> Defensive research notes for secure mobile communication architectures.
+> Notas de arquitectura para comunicaciones móviles seguras.
 
-## Mission
+## Objetivo
 
-Explore how a privacy-first mobile communication system can reduce trust, protect identities and remain usable under constrained connectivity.
+Estudiar cómo un sistema privado de comunicación móvil puede **reducir la confianza implícita**, proteger identidades y seguir funcionando con conectividad limitada.
 
-This laboratory documents **architecture and defensive design concepts only**. It does not publish production secrets, private keys, credentials or operational infrastructure.
+Este laboratorio documenta conceptos defensivos. **No publica** contraseñas, claves privadas, credenciales ni infraestructura operativa.
 
-## Research areas
+## Áreas de investigación
 
-```text
-identity/
-├── local cryptographic identity
-├── key lifecycle
-├── device authorization
-└── identity reset
+~~~text
+Identidad
+├── Identidad criptográfica local
+├── Ciclo de vida de claves
+├── Autorización de dispositivos
+└── Restablecimiento de identidad
 
-transport/
-├── peer-to-peer discovery
-├── authenticated sessions
-├── encrypted payloads
-└── offline-first behavior
+Transporte
+├── Descubrimiento P2P
+├── Sesiones autenticadas
+├── Mensajes cifrados
+└── Funcionamiento sin conexión
 
-resilience/
-├── timeout handling
-├── reconnect strategy
-├── degraded networking
-└── emergency communication UX
-```
+Resiliencia
+├── Gestión de tiempos de espera
+├── Estrategias de reconexión
+├── Redes degradadas
+└── Experiencia de emergencias
+~~~
 
-## Reference architecture
+## Arquitectura de referencia
 
-```mermaid
+~~~mermaid
 flowchart LR
-    A[Device A] -->|Discover| B[P2P Layer]
-    B -->|Authenticated session| C[Device B]
-    A --> D[Identity Store]
-    C --> E[Identity Store]
-    D --> F[Crypto Layer]
-    E --> G[Crypto Layer]
-    F -->|Encrypted payload| B
-    G -->|Decrypt + verify| C
-```
+    A[Dispositivo A] -->|Descubrimiento| B[Capa P2P]
+    B -->|Sesión autenticada| C[Dispositivo B]
+    A --> D[Almacén de identidad]
+    C --> E[Almacén de identidad]
+    D --> F[Capa criptográfica]
+    E --> G[Capa criptográfica]
+    F -->|Mensaje cifrado| B
+    G -->|Descifrar y verificar| C
+~~~
 
-## Security objectives
+## Objetivos de seguridad
 
-| Objective | Design intent |
+| Objetivo | Requisito |
 |---|---|
-| Confidentiality | Sensitive payloads should be encrypted before transport |
-| Integrity | Messages should be verifiable and tamper-evident |
-| Authentication | Peers should establish an identity before trusted exchange |
-| Least privilege | Components should access only the data they require |
-| Recoverability | Identity reset must be explicit, destructive and auditable |
-| Privacy | Metadata exposure should be minimized where practical |
+| Confidencialidad | Cifrar mensajes sensibles antes del transporte |
+| Integridad | Detectar modificaciones de mensajes |
+| Autenticación | Verificar la identidad de cada extremo |
+| Mínimo privilegio | Acceso limitado a los datos necesarios |
+| Recuperación | Restablecimiento de identidad explícito, auditable y controlado |
+| Privacidad | Reducir exposición de metadatos siempre que sea viable |
 
-## Threat assumptions
+## Suposiciones y límites
 
-The model assumes hostile networks, malformed input, accidental disclosure, stale sessions and unauthorized peers.
+Se contemplan redes hostiles, entradas malformadas, pérdidas accidentales de datos, sesiones caducadas y dispositivos no autorizados. No se asume que una aplicación pueda proteger completamente un sistema operativo ya comprometido.
 
-It does **not** assume that a compromised operating system, malicious kernel or physically captured unlocked device can always be defended against.
+[Modelo de amenazas compartido](../../docs/THREAT-MODEL.md).
 
-See the shared [Threat Model](../../docs/THREAT-MODEL.md).
-
-## Ethical scope
-
-Research here is intended for owned or explicitly authorized devices and environments.
-
-**authorization > curiosity**
+**Investigación solo sobre entornos propios o autorizados.** © 2026 Fran Gonzas

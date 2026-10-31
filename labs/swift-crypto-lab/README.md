@@ -1,59 +1,47 @@
-# Swift Crypto Lab
+# Swift Crypto Lab — Criptografía aplicada
 
-> Small, auditable experiments for learning secure application design on Apple platforms.
+> Ejercicios pequeños y auditables de seguridad en plataformas Apple.
 
-## Purpose
+## Propósito
 
-This lab focuses on understanding cryptographic building blocks in Swift without pretending that low-level cryptography should be reimplemented from scratch.
+Comprender los componentes criptográficos disponibles en Swift **sin reimplementar algoritmos de cifrado desde cero**.
 
-Preferred principle:
+~~~text
+Utilizar primitivas contrastadas
+Componer con cuidado
+Almacenar claves con protección
+Rotar cuando sea necesario
+No registrar secretos
+~~~
 
-```text
-use vetted primitives
-compose carefully
-store keys deliberately
-rotate when necessary
-never log secrets
-```
+## Materias tratadas
 
-## Topics
+Fundamentos de CryptoKit, cifrado simétrico, identidad con clave pública, firmas, derivación de claves, almacenamiento seguro, unicidad de nonce, codificación de datos y ciclo de vida de claves.
 
-- CryptoKit fundamentals
-- symmetric encryption concepts
-- public-key identity concepts
-- signatures and verification
-- key derivation concepts
-- secure storage boundaries
-- nonce discipline
-- data encoding and serialization
-- key lifecycle and destruction
+## Flujo conceptual
 
-## Conceptual flow
-
-```mermaid
+~~~mermaid
 flowchart TD
-    A[Application Data] --> B[Canonical Encoding]
-    B --> C[CryptoKit Primitive]
-    D[Key Material] --> C
-    C --> E[Ciphertext / Signature]
-    E --> F[Transport or Storage]
-    F --> G[Verification / Decryption]
-    G --> H[Validated Data]
-```
+    A[Datos de aplicación] --> B[Codificación canónica]
+    B --> C[Primitiva CryptoKit]
+    D[Material de clave] --> C
+    C --> E[Texto cifrado o firma]
+    E --> F[Transporte o almacenamiento]
+    F --> G[Verificación o descifrado]
+    G --> H[Datos validados]
+~~~
 
-## Review checklist
+## Lista de verificación
 
-- [ ] Are platform-provided primitives used instead of custom crypto?
-- [ ] Are keys excluded from source control?
-- [ ] Are keys stored using an appropriate protected mechanism?
-- [ ] Are nonces unique where required?
-- [ ] Is authentication checked before accepting decrypted data?
-- [ ] Are error paths non-leaky?
-- [ ] Are sensitive values excluded from logs?
-- [ ] Has the threat model been written down?
+- [ ] Se usan primitivas de plataforma.
+- [ ] Las claves no están en Git.
+- [ ] Se utiliza almacenamiento protegido.
+- [ ] Los nonce son únicos cuando corresponde.
+- [ ] Se verifica la autenticidad antes de aceptar datos descifrados.
+- [ ] Los errores no filtran información sensible.
+- [ ] Los logs no guardan secretos.
+- [ ] Existe un modelo de amenazas.
 
-## Non-goals
+Este repositorio no desarrolla algoritmos criptográficos nuevos ni herramientas ofensivas.
 
-This repository does not attempt to invent new encryption algorithms or provide offensive cryptographic tooling.
-
-See the shared [Security Checklist](../../docs/SECURITY-CHECKLIST.md).
+[Lista de seguridad compartida](../../docs/SECURITY-CHECKLIST.md). © 2026 Fran Gonzas

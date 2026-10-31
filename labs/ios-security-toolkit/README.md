@@ -1,71 +1,46 @@
-# iOS Security Toolkit
+# iOS Security Toolkit — Guía defensiva
 
-> A defensive checklist and architecture reference for Swift / SwiftUI projects.
+> Referencia de arquitectura y revisión de seguridad para proyectos Swift/SwiftUI.
 
-## Objective
+## Objetivo
 
-Make secure defaults visible during product development.
+Hacer visibles los controles seguros durante el diseño y desarrollo. No es una herramienta de explotación: reúne **preguntas de ingeniería defensiva** aplicables en cada revisión.
 
-This lab is not an exploit kit. It is a collection of **defensive engineering questions** that can be applied during design and review.
+## Áreas a proteger
 
-## Security surfaces
+~~~text
+Aplicación
+├── Autenticación y autorización
+├── Almacenamiento local
+├── Transporte de red
+├── Gestión de secretos y registros
+├── Enlaces profundos y datos de usuarios
+├── Permisos de privacidad
+└── Acciones destructivas
+~~~
 
-```text
-application
-├── authentication
-├── authorization
-├── local storage
-├── network transport
-├── secrets
-├── logs
-├── deep links
-├── user-generated content
-├── privacy permissions
-└── destructive actions
-```
+## Guía de revisión
 
-## Defensive review
+**Identidad:** ¿es local, remota o federada? ¿Qué establece confianza? ¿Se puede revocar una sesión robada? ¿La eliminación de cuentas es completa?
 
-### Identity
-- Is identity local, remote or federated?
-- What establishes trust?
-- Can a lost or stolen session be revoked?
-- Is account or identity deletion complete?
+**Secretos:** ¿se evitan credenciales en Git? ¿Se excluyen tokens de los logs? ¿Se utiliza protección nativa? ¿Se puede rotar el material sensible?
 
-### Secrets
-- Are secrets absent from the repository?
-- Are tokens excluded from logs?
-- Is sensitive material stored with platform protections?
-- Is secret rotation possible?
+**Red:** ¿se consideran no fiables las respuestas? ¿Existen tiempos de espera, TLS y reintentos limitados?
 
-### Networking
-- Are remote responses treated as untrusted?
-- Are timeouts handled?
-- Is TLS used for internet transport?
-- Are retries bounded?
+**Datos:** ¿se minimiza su recopilación? ¿Se define su conservación? ¿Se pueden borrar? ¿Se conocen las implicaciones de las copias y la sincronización?
 
-### Data
-- Is sensitive data minimized?
-- Is retention intentional?
-- Can the user delete stored data?
-- Are backups and synchronization understood?
+**Experiencia de uso:** ¿se diferencian los estados sin conexión, sin autenticar y sin autorización? ¿Son comprensibles los errores y explícitas las acciones peligrosas?
 
-### UX
-- Are dangerous actions explicit?
-- Are security failures understandable?
-- Does the UI distinguish offline, unauthenticated and unauthorized states?
+## Verificación antes de publicar
 
-## Release gate
+- [ ] Sin secretos en código.
+- [ ] Permisos y privacidad revisados.
+- [ ] Eliminación destructiva probada.
+- [ ] Modo sin conexión validado.
+- [ ] Autorización verificada.
+- [ ] Registros y dependencias revisados.
+- [ ] Modelo de amenazas actualizado.
 
-```text
-[ ] no credentials in source
-[ ] privacy usage descriptions reviewed
-[ ] destructive flows tested
-[ ] offline behavior tested
-[ ] authorization boundaries reviewed
-[ ] logging reviewed
-[ ] dependency surface reviewed
-[ ] threat model updated
-```
+Consulta la [lista de verificación completa](../../docs/SECURITY-CHECKLIST.md).
 
-See the full [Security Checklist](../../docs/SECURITY-CHECKLIST.md).
+© 2026 Fran Gonzas

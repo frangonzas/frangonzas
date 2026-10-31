@@ -1,72 +1,61 @@
-# P2P Research
+# P2P Research — Fiabilidad y confianza
 
-> Reliability, trust and privacy experiments for peer-to-peer Apple applications.
+> Experimentos con aplicaciones P2P en el ecosistema Apple.
 
-## Research question
+## Pregunta principal
 
-How can nearby devices discover each other and exchange data while keeping trust explicit and failure states understandable?
+¿Cómo pueden descubrirse dispositivos cercanos e intercambiar información sin confundir **descubrimiento** con **autorización** y manteniendo comprensibles los estados de error?
 
-## System layers
+## Capas del sistema
 
-```text
-UI
+~~~text
+Interfaz de usuario
 ↓
-Session State
+Estado de sesión
 ↓
-Authorization Policy
+Política de autorización
 ↓
-Message Validation
+Validación de mensajes
 ↓
-Transport Abstraction
+Abstracción del transporte
 ↓
-Peer Discovery
-```
+Descubrimiento de dispositivos
+~~~
 
-## Architecture
+## Secuencia de referencia
 
-```mermaid
+~~~mermaid
 sequenceDiagram
-    participant A as Device A
-    participant D as Discovery Layer
-    participant B as Device B
-    A->>D: advertise capability
-    B->>D: browse authorized service
-    D-->>A: peer discovered
-    D-->>B: peer discovered
-    A->>B: identity proposal
-    B-->>A: authorization decision
-    A->>B: validated message
-    B-->>A: acknowledgement
-```
+    participant A as Dispositivo A
+    participant D as Capa de descubrimiento
+    participant B as Dispositivo B
+    A->>D: anunciar capacidad
+    B->>D: buscar servicio autorizado
+    D-->>A: dispositivo descubierto
+    D-->>B: dispositivo descubierto
+    A->>B: propuesta de identidad
+    B-->>A: decisión de autorización
+    A->>B: mensaje validado
+    B-->>A: confirmación
+~~~
 
-## Engineering concerns
+## Aspectos técnicos
 
-### Discovery
-Peer discovery should not imply trust. Discovery only means a compatible endpoint is visible.
+- **Descubrimiento:** visibilidad de un extremo compatible, sin conceder confianza.
+- **Autorización:** estado independiente de la conectividad.
+- **Validación:** cada mensaje entrante es no fiable hasta decodificarlo y validarlo.
+- **Persistencia:** conservar únicamente el estado necesario para restaurar una experiencia segura.
+- **Fallos:** caducidades, desconexiones y estados obsoletos son situaciones previstas.
 
-### Authorization
-The application should maintain a separate authorization state instead of treating connectivity as identity.
+## Matriz de pruebas
 
-### Validation
-All inbound payloads should be treated as untrusted until decoded and validated.
-
-### Persistence
-Persist only the minimum state required to restore a safe user experience.
-
-### Failure
-Timeouts, interrupted sessions and stale peer state should be first-class conditions, not exceptional surprises.
-
-## Test matrix
-
-| Condition | Expected behavior |
+| Situación | Comportamiento esperado |
 |---|---|
-| Peer disappears mid-session | Session closes cleanly |
-| Duplicate discovery event | No duplicate authorization prompt |
-| Unknown peer sends payload | Payload rejected |
-| Malformed payload | Decode fails safely |
-| App relaunches | Trust state restored only when intentionally persisted |
-| Network unavailable | UI enters explicit degraded state |
+| Desaparece un extremo durante una sesión | Cierre ordenado |
+| Descubrimiento duplicado | No repetir solicitud de autorización |
+| Mensaje de extremo desconocido | Rechazo |
+| Mensaje malformado | Error controlado |
+| Reinicio de aplicación | Restaurar confianza solo cuando se guardó expresamente |
+| Sin red | Mostrar estado degradado claro |
 
-## Scope
-
-Defensive and reliability-oriented experimentation on owned or authorized devices only.
+**Solo pruebas defensivas en dispositivos propios o autorizados.** © 2026 Fran Gonzas
